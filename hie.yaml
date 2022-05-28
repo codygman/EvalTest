@@ -1,12 +1,19 @@
 cradle:
   multi:
-    - path: "./Setup.hs"
-      config: { cradle: { none:  } }
+    - path: ./Setup.hs
+      config:
+        cradle:
+          direct:
+            arguments:
+              - "-package Cabal"
+              - "-package base"
     - path: "./"
       config:
         cradle:
           stack:
+            - path: "./src/"
+              component: "EvalTest:lib"
             - path: "./app/Main.hs"
-              component: "EvalTest:exe:EvalTest"
+              component: "EvalTest:exe:EvalTest-exe"
             - path: "./test/Spec.hs"
-              component: "EvalTest:test:EvalTest-test-suite"
+              component: "EvalTest:test:EvalTest-test"
