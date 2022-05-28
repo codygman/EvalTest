@@ -1,0 +1,6 @@
+resolver: lts-19.7
+
+flags:
+  hashable:
+    random-initial-seed: true
+

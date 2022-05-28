@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  stack: &stack
+    init: true
+    restart: unless-stopped
+    build:
+      context: ./docker-stack
+    volumes:
+      - .:$PWD
+    working_dir: $PWD
+    environment:
+      STACK_WORK: ".docker/.stack-work"
+    tty: true
+    command: ["./docker-stack/run-ide.sh"]
+  stack-hls:
+      <<: *stack
+      restart: "no"
+      volumes:
+        - hls.cache:/home/haskell/.cache
+        - .:$PWD
+      entrypoint: "./docker-stack/run-hls.sh"
+      command: []
+
+volumes:
+  hls.cache: null

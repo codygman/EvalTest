@@ -1,0 +1,6 @@
+allow-different-user: true
+local-bin-path: /stack/bin
+recommend-stack-upgrade: false
+# NOTE: we use the system GHC installed by GHCUP because for Mac M1 users the stack provided GHC doesn't work
+system-ghc: true
+install-ghc: false
