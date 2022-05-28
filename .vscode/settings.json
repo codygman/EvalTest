@@ -1,0 +1,9 @@
+{
+    "files.watcherExclude": {
+        "**/.docker/**": true,
+        "**/.git/**": true,
+        "**/.hie/**": true,
+        "**/.stack-work/**": true,
+    },
+    "haskell.serverExecutablePath": "${workspaceFolder}/run-haskell-language-server-in-docker"
+}
