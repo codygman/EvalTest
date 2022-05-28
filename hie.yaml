@@ -1,0 +1,12 @@
+cradle:
+  multi:
+    - path: "./Setup.hs"
+      config: { cradle: { none:  } }
+    - path: "./"
+      config:
+        cradle:
+          stack:
+            - path: "./app/Main.hs"
+              component: "EvalTest:exe:EvalTest"
+            - path: "./test/Spec.hs"
+              component: "EvalTest:test:EvalTest-test-suite"
